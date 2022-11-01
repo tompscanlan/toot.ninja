@@ -4,4 +4,4 @@
 	$: calc = name.length;
 </script>
 
-<input bind:value='{name}'/> len {calc}
+<input bind:value={name} /> len {calc}
