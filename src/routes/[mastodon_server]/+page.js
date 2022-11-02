@@ -10,9 +10,13 @@
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
-	const res = await fetch(`https://mastodon.lol/api/v1/timelines/public`);
-	const item = await res.json();
+	const res = await fetch(`https://` + params.mastodon_server + `/api/v1/timelines/public`);
+	const timelines = await res.json();
+
+	const data = {
+		timelines: timelines
+	};
 
 	console.log(params);
-	return { item };
+	return { data };
 }

@@ -21,7 +21,11 @@
 <h1>Welcome to SvelteKit, {username}</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
+<a href="/mastodon.lol/">mastodon.lol</a>
+<a href="/botsin.space/">botsin.space</a>
+
 <a href="/app01">App 01</a>
+<a href="/app02">App 02</a>
 
 <Info {...pkg} />
 
