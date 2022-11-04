@@ -1,41 +1,22 @@
 <script>
+	import { page } from '$app/stores';
+	import { instance_activity } from './instance_activity';
+
 	/** @type {import('./$types').PageData} */
 	export let data;
-
-	console.log(data.data.timelines[0]);
-
-	import { page } from '$app/stores';
 </script>
 
-<!--id: number;-->
-<!--username: string;-->
-<!--acct: string,-->
-<!--display_name: string,-->
-<!--locked: string,-->
-<!--bot: string,-->
-<!--discoverable: string,-->
-<!--group: string,-->
-<!--created_at: string,-->
-<!--	note: string,-->
-<!--		url: string,-->
-<!--			avatar: string,-->
-<!--				avatar_static: string,-->
-<!--					header: string,-->
-<!--header_static: string,-->
-<!--followers_count: string,-->
-<!--following_count: string,-->
-<!--statuses_count: string,-->
-<!--last_status_at: string,-->
-<!--emojis: string,-->
-<!--fields: string,-->
-
 <h1>timelines for {$page.params.mastodon_server}</h1>
-<!--<div>{@html data.apps.slug}</div>-->
 
 <aside>
 	<h2>More posts</h2>
 
-	{#each data.data.timelines as timeline}
+	instance_activity:
+	<pre>
+		{JSON.stringify($instance_activity, undefined, 2)}
+	</pre>
+
+	{#each instance_activity as timeline}
 		<div class="card container">
 			<a href={timeline.url}>
 				{timeline.id}
@@ -48,10 +29,6 @@
 		</div>
 	{/each}
 </aside>
-
-<div>
-	{@debug $page}
-</div>
 
 <style>
 	.card {
