@@ -6,6 +6,7 @@
 
 	import { page } from '$app/stores';
 
+	import Photo from './photo.svelte';
 	import Topbar from './Topbar.svelte';
 	import AuthOnly from './AuthOnly.svelte';
 
@@ -37,6 +38,7 @@
 	{/each}
 </ul>
 
+<Photo/>
 <Info {...pkg} />
 
 <p>something <NameInput /></p>
