@@ -8,8 +8,8 @@
 // 	};
 // }
 
-import { instance_activity } from './instance_activity';
-import { a,b } from './data';
+import { instance_activity } from './instance_activity.js';
+import { a, b } from './data.js';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
@@ -17,18 +17,13 @@ export async function load({ fetch, params }) {
 	// const res = await fetch(`https://` + params.mastodon_server + `/api/v1/instance`);
 	// let timelines = d;
 
-
-		// timelines = await res.json();
-		instance_activity.set(a)
-		instance_activity.update(
-			item => (
-				{
-				...item,
-				...b
-			}
-			)
-		);
-		// instance_activity.update((n) => {let a=1; return {test: 1};})
+	// timelines = await res.json();
+	instance_activity.set(a);
+	instance_activity.update((item) => ({
+		...item,
+		...b
+	}));
+	// instance_activity.update((n) => {let a=1; return {test: 1};})
 
 	// /api/v1/timelines/tag/:hashtag
 	// //GET /api/v1/instance,

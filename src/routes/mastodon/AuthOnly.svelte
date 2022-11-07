@@ -1,5 +1,5 @@
 <script>
-	import { user } from './user';
+	import { user } from './user.js';
 	$: authenticated = $user.loggedIn;
 </script>
 

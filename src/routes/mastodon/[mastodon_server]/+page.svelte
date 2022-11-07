@@ -1,8 +1,9 @@
 <script>
 	import { page } from '$app/stores';
-	import { instance_activity } from './instance_activity';
+	import { instance_activity } from './instance_activity.js';
 
 	/** @type {import('./$types').PageData} */
+	/* eslint-disable-next-line */
 	export let data;
 </script>
 

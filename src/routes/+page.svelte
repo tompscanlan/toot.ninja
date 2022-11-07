@@ -1,66 +1,21 @@
-<script>
-	let username = 'outworlder';
-	let password = 'havebestpassword';
-	let version = '5.0';
-	let loggedin = false;
+<div class="center">
+	<div class="center-text">
+		<h1>toot ninja was here.</h1>
+		<h3>can you tell?</h3>
 
-	import { page } from '$app/stores';
-
-	import Photo from './photo.svelte';
-	import Topbar from './Topbar.svelte';
-	import AuthOnly from './AuthOnly.svelte';
-
-	import CounterButton from './counter-button.svelte';
-	import Nested from './nested.svelte';
-
-	import NameInput from './name-input.svelte';
-	import Info from './Info.svelte';
-
-	let pkg = {
-		name: username,
-		version: version,
-		is_logged_in: loggedin,
-		speed: 'blazing'
-	};
-</script>
-
-<Topbar />
-
-<h1>Welcome to SvelteKit, {username}</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-<!--{@debug $page}-->
-
-<h1>Mastodon Servers</h1>
-<ul>
-	{#each $page.data.mastodon_hosts as host}
-		<li><a href={'/' + host + '/'}>{host}</a></li>
-	{/each}
-</ul>
-
-<Photo/>
-<Info {...pkg} />
-
-<p>something <NameInput /></p>
-
-<p>username <NameInput bind:name={username} /></p>
-<p>password <NameInput bind:name={password} /></p>
-
-<Nested name={username} />
-
-<CounterButton />
-
-<div>
-	<p>This part of the page is always visible</p>
-</div>
-<div>
-	<p>This part is only visible to logged in users</p>
-	<AuthOnly />
+		<img src="/LookingRight.jpg" width="500px" alt="shifty" />
+	</div>
 </div>
 
 <style>
-	div {
-		border: 1px solid blue;
-		padding: 5px 10px;
+	.center {
+		margin: auto;
+		width: 50%;
+		/*border: 3px solid green;*/
+		padding: 10px;
+	}
+	.center-text {
+		text-align: center;
+		/*border: 3px solid blue;*/
 	}
 </style>
